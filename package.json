@@ -25,6 +25,7 @@
     "core-js": "^2.5.5",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0",
+    "spectre.css": "^0.5.1",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
