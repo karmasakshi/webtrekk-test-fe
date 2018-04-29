@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="columns">
+
+    <!-- Customer Card Wrapper -->
+    <div class="column col-sm-12 col-md-6 col-xl-4" *ngFor="let customer of customers">
+
+      <!-- Customer Card Wrapper / Customer Card -->
+      <div class="card app-card" [ngClass]="{ 'app-man-card': customer.gender === 'm', 'app-woman-card': customer.gender === 'w' }">
+
+        <!-- Customer Card / Avatar -->
+        <div class="card-image">
+          <img src="https://picsum.photos/256?random={{ customer.name.first }}" class="img-responsive app-avatar">
+        </div>
+
+        <!-- Customer Card / Name -->
+        <div class="card-header">
+          <div class="card-title h5">
+            <span>{{ customer.name.first }}</span>
+            <span> </span>
+            <span>{{ customer.name.last }}</span>
+          </div>
+        </div>
+
+        <!-- Customer Card / Details -->
+        <div class="card-body">
+
+          <!-- Details / ID -->
+          <div>
+            <span>ID:</span>
+            <span> </span>
+            <code>{{ customer.customerID }}</code>
+          </div>
+
+          <!-- Details / Birthday -->
+          <div>
+            <span>Birthday:</span>
+            <span> </span>
+            <span>{{ customer.birthday | date }}</span>
+          </div>
+
+          <!-- Details / Lifetime Value -->
+          <div>
+            <span>Lifetime Value:</span>
+            <span> </span>
+            <span>{{ customer.customerLifetimeValue }}</span>
+          </div>
+
+        </div>
+
+        <!-- Customer Card / Actions -->
+        <div class="card-footer">
+          <button class="btn btn-sm btn-primary">
+            <i class="icon icon-edit"></i>
+            <span>Edit</span>
+          </button>
+          <button class="btn btn-sm btn-link tooltip tooltip-bottom" data-tooltip="Delete">
+            <i class="icon icon-delete"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</div>
