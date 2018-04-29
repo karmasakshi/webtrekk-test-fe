@@ -2,6 +2,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+/* --- Other Modules --- */
+import { CustomerModule } from './modules/customer/customer.module';
+
 /* --- Routing Module --- */
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,6 +25,9 @@ import { MainComponent } from './components/main/main.component';
 
     /* --- Angular Imports --- */
     BrowserModule,
+
+    /* --- Other Modules --- */
+    CustomerModule,
 
     /* --- Routing Module --- */
     AppRoutingModule
