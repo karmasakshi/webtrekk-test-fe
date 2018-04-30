@@ -2,7 +2,7 @@
   <div class="columns">
 
     <!-- Customer Card Wrapper -->
-    <div class="column col-sm-12 col-md-6 col-xl-4" *ngFor="let customer of customers; let index = $index;">
+    <div class="column col-sm-12 col-md-6 col-xl-4" *ngFor="let customer of customers">
 
       <!-- Customer Card Wrapper / Customer Card -->
       <div class="card app-card" [ngClass]="{ 'app-man-card': customer.gender === 'm', 'app-woman-card': customer.gender === 'w' }">
@@ -49,13 +49,18 @@
 
         <!-- Customer Card / Actions -->
         <div class="card-footer">
+
+          <!-- Actions / Edit -->
           <button [routerLink]="[customer.customerID]" type="button" class="btn btn-sm btn-primary">
             <i class="icon icon-edit"></i>
             <span>Edit</span>
           </button>
-          <button (click)="deleteCustomer(index)" type="button" class="btn btn-sm btn-link tooltip tooltip-bottom" data-tooltip="Delete">
+
+          <!-- Actions / Delete -->
+          <button (click)="deleteCustomer(customer.customerID)" type="button" class="btn btn-sm btn-link tooltip tooltip-bottom" data-tooltip="Delete">
             <i class="icon icon-delete"></i>
           </button>
+
         </div>
 
       </div>

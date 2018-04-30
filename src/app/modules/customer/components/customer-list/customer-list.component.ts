@@ -27,6 +27,9 @@ export class CustomerListComponent implements OnInit {
 
   }
 
+  /**
+   * Gets customers.
+   */
   private getCustomers(): void {
 
     this.customerService.getCustomers().subscribe(
@@ -44,5 +47,11 @@ export class CustomerListComponent implements OnInit {
     );
 
   }
+
+  /**
+   * Deletes a customer.
+   * @param customerId Customer ID.
+   */
+  public deleteCustomer(customerId: number): void { }
 
 }
