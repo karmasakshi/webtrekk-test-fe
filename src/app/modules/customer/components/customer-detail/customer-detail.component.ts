@@ -121,12 +121,15 @@ export class CustomerDetailComponent implements OnInit {
 
   }
 
+  /**
+   * Sets customer form.
+   */
   public setCustomerForm(): void {
 
     this.customerForm = new FormGroup({
       birthday: new FormControl(this.customer.birthday, Validators.required),
       customerID: new FormControl(this.customer.customerID),
-      customerLifetimeValue: new FormControl(this.customer.customerLifetimeValue, Validators.required),
+      customerLifetimeValue: new FormControl(this.customer.customerLifetimeValue, [Validators.required, Validators.pattern(/([0-9]+[.]?[0-9]*)/)]),
       lastContact: new FormControl(this.customer.lastContact, Validators.required),
       gender: new FormControl(this.customer.gender, Validators.required),
       name: new FormGroup({
@@ -138,7 +141,7 @@ export class CustomerDetailComponent implements OnInit {
   }
 
   /**
-   * Submit.
+   * Submits.
    */
   public submit(): void {
 

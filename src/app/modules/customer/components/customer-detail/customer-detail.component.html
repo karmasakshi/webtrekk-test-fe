@@ -74,7 +74,7 @@
 
         <!-- Save -->
         <div class="text-center">
-          <button class="btn btn-primary" (click)="submit()" [disabled]="!customerForm.valid" type="button">
+          <button class="btn btn-primary" (click)="submit()" [disabled]="!customerForm.valid || customerForm.pristine" type="button">
             <span *ngIf="componentMode === 'edit'">Update</span>
             <span *ngIf="componentMode === 'add'">Add</span>
           </button>

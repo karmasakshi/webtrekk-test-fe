@@ -249,19 +249,23 @@ export class CustomerService {
 
             let customers: Customer[] = JSON.parse(localStorage.getItem('data'));
 
+            let customerIndex: number = -1;
+
             customers.forEach(
 
-              (customer) => {
+              (customer, index) => {
 
                 if (customer.customerID === updatedCustomer.customerID) {
 
-                  customer = JSON.parse(JSON.stringify(updatedCustomer));
+                  customerIndex = index;
 
                 }
 
               }
 
             );
+
+            customers[customerIndex] = updatedCustomer;
 
             localStorage.setItem('data', JSON.stringify(customers));
 
