@@ -27,8 +27,6 @@ export class HeaderComponent implements OnInit {
 
         this.router.navigate(['/customers']);
 
-        location.reload();
-
       },
 
       () => { }

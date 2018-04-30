@@ -100,6 +100,27 @@ export class CustomerDetailComponent implements OnInit {
 
   }
 
+  /**
+   * Deletes customer.
+   */
+  public deleteCustomer(customerId: number): void {
+
+    if (confirm('Are you sure?')) {
+
+      this.customerService.deleteCustomer(customerId).then(
+
+        () => {
+
+          this.router.navigate(['/']);
+
+        }
+
+      );
+
+    }
+
+  }
+
   public setCustomerForm(): void {
 
     this.customerForm = new FormGroup({

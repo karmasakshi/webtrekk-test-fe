@@ -78,7 +78,7 @@
             <span *ngIf="componentMode === 'edit'">Update</span>
             <span *ngIf="componentMode === 'add'">Add</span>
           </button>
-          <button class="btn btn-error" *ngIf="componentMode === 'edit'" type="button">
+          <button class="btn btn-error" (click)="deleteCustomer(customer.customerID)" *ngIf="componentMode === 'edit'" type="button">
             <span>Delete</span>
           </button>
         </div>
