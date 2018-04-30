@@ -1,0 +1,57 @@
+[
+  {
+    "customerID": 1,
+    "name": {
+      "first": "Peter",
+      "last": "Smith"
+    },
+    "birthday": "1996-10-12",
+    "gender": "m",
+    "lastContact": "1996-10-12",
+    "customerLifetimeValue": 191.12
+  },
+  {
+    "customerID": 2,
+    "name": {
+      "first": "Anna",
+      "last": "Hopp"
+    },
+    "birthday": "1987-05-03",
+    "gender": "w",
+    "lastContact": "1987-05-03",
+    "customerLifetimeValue": 50.99
+  },
+  {
+    "customerID": 3,
+    "name": {
+      "first": "Christian",
+      "last": "Cox"
+    },
+    "birthday": "1991-02-21",
+    "gender": "m",
+    "lastContact": "1991-02-21",
+    "customerLifetimeValue": 0
+  },
+  {
+    "customerID": 4,
+    "name": {
+      "first": "Roxy",
+      "last": "Fox"
+    },
+    "birthday": "1979-06-30",
+    "gender": "w",
+    "lastContact": "1979-06-30",
+    "customerLifetimeValue": 213.12
+  },
+  {
+    "customerID": 5,
+    "name": {
+      "first": "Eric",
+      "last": "Adam"
+    },
+    "birthday": "1969-11-21",
+    "gender": "m",
+    "lastContact": "1969-11-21",
+    "customerLifetimeValue": 1019.91
+  }
+]
