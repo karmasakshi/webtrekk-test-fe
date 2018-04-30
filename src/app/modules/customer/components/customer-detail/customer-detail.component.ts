@@ -78,6 +78,8 @@ export class CustomerDetailComponent implements OnInit {
 
                 () => {
 
+                  alert('Invalid customer ID. You will be redirected to the Customer List.');
+
                   this.router.navigate(['/']);
 
                 }
@@ -129,7 +131,7 @@ export class CustomerDetailComponent implements OnInit {
     this.customerForm = new FormGroup({
       birthday: new FormControl(this.customer.birthday, Validators.required),
       customerID: new FormControl(this.customer.customerID),
-      customerLifetimeValue: new FormControl(this.customer.customerLifetimeValue, [Validators.required, Validators.pattern(/([0-9]+[.]?[0-9]*)/)]),
+      customerLifetimeValue: new FormControl(this.customer.customerLifetimeValue, Validators.required),
       lastContact: new FormControl(this.customer.lastContact, Validators.required),
       gender: new FormControl(this.customer.gender, Validators.required),
       name: new FormGroup({
