@@ -2,58 +2,88 @@
   <div class="columns">
     <div class="column">
 
-      <h1>Editing Customer: <code>1</code></h1>
+      <h1 *ngIf="componentMode === 'add'">
+        <span>Adding Customer</span>
+      </h1>
+
+      <h1 *ngIf="componentMode === 'edit'">
+        <span>Editing Customer:</span>
+        <code>{{ customer?.customerID }}</code>
+      </h1>
 
       <hr>
 
-      <!-- First Name -->
-      <div class="form-group">
-        <label class="form-label" for="first-name">First Name</label>
-        <input class="form-input" type="text" id="first-name" placeholder="First Name">
-      </div>
+      <form [formGroup]="customerForm" novalidate>
 
-      <!-- Last Name -->
-      <div class="form-group">
-        <label class="form-label" for="last-name">Last Name</label>
-        <input class="form-input" type="text" id="last-name" placeholder="Last Name">
-      </div>
+        <fieldset formGroupName="name">
 
-      <!-- Gender -->
-      <div class="form-group">
-        <label class="form-label">Gender</label>
-        <label class="form-radio">
-          <input type="radio" name="gender">
-          <i class="form-icon"></i> Man
-        </label>
-        <label class="form-radio">
-          <input type="radio" name="gender">
-          <i class="form-icon"></i> Woman
-        </label>
-      </div>
+          <!-- Name / First -->
+          <div class="form-group">
+            <label class="form-label" for="first-name">First Name</label>
+            <input class="form-input" formControlName="first" id="first-name" placeholder="First Name" type="text">
+          </div>
 
-      <!-- Birthday -->
-      <div class="form-group">
-        <label class="form-label" for="birthday">Birthday</label>
-        <input class="form-input" type="date" id="birthday" placeholder="Birthday">
-      </div>
+          <!-- Name / Last -->
+          <div class="form-group">
+            <label class="form-label" for="last-name">Last Name</label>
+            <input class="form-input" formControlName="last" id="last-name" placeholder="Last Name" type="text">
+          </div>
 
-      <!-- Last Contact -->
-      <div class="form-group">
-        <label class="form-label" for="last-contact">Last Contact</label>
-        <input class="form-input" type="date" id="last-contact" placeholder="Last Contact">
-      </div>
+        </fieldset>
 
-      <!-- Lifetime Value -->
-      <div class="form-group">
-        <label class="form-label" for="lifetime-value">Lifetime Value</label>
-        <input class="form-input" type="text" id="lifetime-value" placeholder="Lifetime Value">
-      </div>
+        <!-- Gender -->
+        <div class="form-group">
 
-      <br />
+          <label class="form-label">Gender</label>
 
-      <div class="text-center">
-        <button type="button" class="btn btn-primary">Save</button>
-      </div>
+          <!-- Gender / Man -->
+          <label class="form-radio">
+            <input formControlName="gender" name="gender" type="radio" value="m">
+            <i class="form-icon"></i>
+            <span>Man</span>
+          </label>
+
+          <!-- Gender / Woman -->
+          <label class="form-radio">
+            <input formControlName="gender" name="gender" type="radio" value="w">
+            <i class="form-icon"></i>
+            <span>Woman</span>
+          </label>
+
+        </div>
+
+        <!-- Birthday -->
+        <div class="form-group">
+          <label class="form-label" for="birthday">Birthday</label>
+          <input class="form-input" formControlName="birthday" id="birthday" placeholder="Birthday" type="date">
+        </div>
+
+        <!-- Last Contact -->
+        <div class="form-group">
+          <label class="form-label" for="last-contact">Last Contact</label>
+          <input class="form-input" formControlName="lastContact" id="last-contact" placeholder="Last Contact" type="date">
+        </div>
+
+        <!-- Lifetime Value -->
+        <div class="form-group">
+          <label class="form-label" for="lifetime-value">Lifetime Value</label>
+          <input class="form-input" formControlName="customerLifetimeValue" id="lifetime-value" placeholder="Lifetime Value" type="text">
+        </div>
+
+        <br />
+
+        <!-- Save -->
+        <div class="text-center">
+          <button class="btn btn-primary" (click)="submit()" [disabled]="!customerForm.valid" type="button">
+            <span *ngIf="componentMode === 'edit'">Update</span>
+            <span *ngIf="componentMode === 'add'">Add</span>
+          </button>
+          <button class="btn btn-error" *ngIf="componentMode === 'edit'" type="button">
+            <span>Delete</span>
+          </button>
+        </div>
+
+      </form>
 
     </div>
   </div>

@@ -2,6 +2,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+/* --- Interfaces --- */
+import { Customer } from '../../modules/customer/interfaces/customer';
+
 /* --- Constants --- */
 const DATA_URL: string = 'assets/customers-sample.json';
 
@@ -25,45 +28,73 @@ export class CustomerService {
    */
   private async initializeStorage(): Promise<any> {
 
-    return new Promise((resolve, reject) => {
+    return new Promise(
 
-      if (this.isStorageInitialized) {
+      (resolve) => {
 
-        resolve();
-
-      } else {
-
-        if (!localStorage.getItem('data')) {
-
-          this.httpClient.get(DATA_URL).subscribe(
-
-            (response) => {
-
-              localStorage.setItem('data', JSON.stringify(response));
-
-              this.isStorageInitialized = true;
-
-              resolve();
-
-            },
-
-            () => { },
-
-            () => { }
-
-          );
-
-        } else {
-
-          this.isStorageInitialized = true;
+        if (this.isStorageInitialized) {
 
           resolve();
 
+        } else {
+
+          if (!localStorage.getItem('data')) {
+
+            this.httpClient.get(DATA_URL).subscribe(
+
+              (response) => {
+
+                localStorage.setItem('data', JSON.stringify(response));
+
+                this.isStorageInitialized = true;
+
+                resolve();
+
+              }
+
+            );
+
+          } else {
+
+            this.isStorageInitialized = true;
+
+            resolve();
+
+          }
+
         }
+
+      });
+
+  }
+
+  public async addCustomer(newCustomer: Customer): Promise<any> {
+
+    this.initializeStorage().then(
+
+      () => {
+
+        return new Promise(
+
+          (resolve) => {
+
+            let customers: Customer[] = JSON.parse(localStorage.getItem('data'));
+
+            let newCustomerId: number = customers[customers.length - 1].customerID + 1;
+
+            newCustomer.customerID = newCustomerId;
+
+            customers.push(newCustomer);
+
+            localStorage.setItem('data', JSON.stringify(customers));
+
+            resolve();
+
+          });
 
       }
 
-    });
+    );
 
   }
 
@@ -71,30 +102,42 @@ export class CustomerService {
    * Delete customer.
    * @param customerId Customer ID.
    */
-  public deleteCustomer(customerId: number): Promise<any> {
+  public async deleteCustomer(customerId: number): Promise<any> {
 
-    return new Promise((resolve, reject) => {
+    this.initializeStorage().then(
 
-      let data: any[] = JSON.parse(localStorage.getItem('data'));
-      let deleteIndex: number = -1;
+      () => {
 
-      data.forEach((customer, index) => {
+        return new Promise(
 
-        if (customer.customerID === customerId) {
+          (resolve) => {
 
-          deleteIndex = index;
+            let data: any[] = JSON.parse(localStorage.getItem('data'));
+            let deleteIndex: number = -1;
 
-        }
+            data.forEach(
 
-      });
+              (customer, index) => {
 
-      data.splice(deleteIndex, 1);
+                if (customer.customerID === customerId) {
 
-      localStorage.setItem('data', JSON.stringify(data));
+                  deleteIndex = index;
 
-      resolve();
+                }
 
-    });
+              });
+
+            data.splice(deleteIndex, 1);
+
+            localStorage.setItem('data', JSON.stringify(data));
+
+            resolve();
+
+          });
+
+      }
+
+    );
 
   }
 
@@ -102,62 +145,133 @@ export class CustomerService {
    * Get customer.
    * @param customerId Customer ID.
    */
-  public getCustomer(customerId: number): void { }
+  public async getCustomer(customerId: number): Promise<any> {
+
+    return new Promise(
+
+      (resolve, reject) => {
+
+        this.initializeStorage().then(
+
+          () => {
+
+            let customers: Customer[] = JSON.parse(localStorage.getItem('data'));
+
+            customers.forEach(
+
+              customer => {
+
+                if (customer.customerID === customerId) {
+
+                  resolve(customer);
+
+                }
+
+              }
+
+            );
+
+            reject();
+
+          },
+
+          () => { }
+
+        );
+
+      });
+
+  }
 
   /**
    * Gets customers.
    */
   public async getCustomers(): Promise<any> {
 
-    return new Promise((resolve, reject) => {
+    return new Promise(
 
-      this.initializeStorage().then(
+      (resolve) => {
 
-        () => {
+        this.initializeStorage().then(
 
-          resolve(JSON.parse(localStorage.getItem('data')));
+          () => {
 
-        },
+            resolve(JSON.parse(localStorage.getItem('data')));
 
-        () => { }
+          },
 
-      );
+          () => { }
 
-    });
+        );
+
+      });
 
   }
-
-  /**
-   * Updates customer.
-   * @param customerId Customer ID.
-   * @param customer Customer object.
-   */
-  public updateCustomer(customerId: number, customer: any): void { }
 
   /**
    * Resets storage.
    */
   public async resetStorage(): Promise<any> {
 
-    return new Promise((resolve, reject) => {
+    return new Promise(
 
-      this.httpClient.get(DATA_URL).subscribe(
+      (resolve) => {
 
-        (response) => {
+        localStorage.removeItem('data');
 
-          localStorage.setItem('data', JSON.stringify(response));
+        this.initializeStorage().then(
 
-          resolve();
+          () => {
 
-        },
+            resolve();
 
-        () => { },
+          }
 
-        () => { }
+        );
 
-      );
+      });
 
-    });
+  }
+
+  /**
+   * Updates customer.
+   * @param updatedCustomer: Updated customer.
+   */
+  public async updateCustomer(updatedCustomer: Customer): Promise<any> {
+
+    return new Promise(
+
+      (resolve) => {
+
+        this.initializeStorage().then(
+
+          () => {
+
+            let customers: Customer[] = JSON.parse(localStorage.getItem('data'));
+
+            customers.forEach(
+
+              (customer) => {
+
+                if (customer.customerID === updatedCustomer.customerID) {
+
+                  customer = JSON.parse(JSON.stringify(updatedCustomer));
+
+                }
+
+              }
+
+            );
+
+            localStorage.setItem('data', JSON.stringify(customers));
+
+            resolve();
+
+          }
+
+        );
+
+      });
 
   }
 

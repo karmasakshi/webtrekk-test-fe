@@ -2,7 +2,7 @@
   <div class="columns">
 
     <!-- Customer Tile Wrapper -->
-    <div class="column col-sm-12 col-lg-6 col-4" *ngFor="let customer of customers">
+    <div class="col-4 col-sm-12 col-lg-6 column" *ngFor="let customer of customers">
 
       <!-- Customer Tile Wrapper / Customer Tile -->
       <div class="tile" [ngClass]="{ 'app-man-tile': customer.gender === 'm', 'app-woman-tile': customer.gender === 'w' }">
@@ -10,7 +10,7 @@
         <!-- Customer Tile / Avatar -->
         <div class="tile-icon">
           <figure class="avatar avatar-xl">
-            <img src="https://picsum.photos/512?random={{ customer.name.first }}" alt="Avatar">
+            <img alt="Avatar" src="https://picsum.photos/512?random={{ customer.name.first }}">
           </figure>
         </div>
 
@@ -24,7 +24,7 @@
           </div>
 
           <!-- Content / Details -->
-          <div class="tile-subtitle text-gray">
+          <div class="text-gray tile-subtitle">
 
             <!-- Details / ID -->
             <div>
@@ -58,13 +58,13 @@
         <div class="tile-action">
 
           <!-- Actions / Edit -->
-          <button [routerLink]="[customer.customerID]" type="button" class="btn btn-sm btn-primary">
+          <button class="btn btn-sm btn-primary" [routerLink]="[customer.customerID]" type="button">
             <i class="icon icon-edit"></i>
             <span>Edit</span>
           </button>
 
           <!-- Actions / Delete -->
-          <button (click)="deleteCustomer(customer.customerID)" type="button" class="btn btn-sm btn-link tooltip tooltip-bottom" data-tooltip="Delete">
+          <button class="btn btn-link btn-sm tooltip tooltip-bottom" (click)="deleteCustomer(customer.customerID)" data-tooltip="Delete" type="button">
             <i class="icon icon-delete"></i>
           </button>
 

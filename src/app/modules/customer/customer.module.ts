@@ -1,6 +1,7 @@
 /* --- Angular Imports --- */
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 /* --- Routing Module --- */
 import { CustomerRoutingModule } from './customer-routing.module';
@@ -14,6 +15,7 @@ import { CustomerListComponent } from './components/customer-list/customer-list.
 
     /* --- Angular Imports --- */
     CommonModule,
+    ReactiveFormsModule,
 
     /* --- Routing Module --- */
     CustomerRoutingModule

@@ -1,5 +1,6 @@
 /* --- Angular Imports --- */
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 /* --- Services --- */
 import { CustomerService } from '../../services/customer/customer.service';
@@ -12,6 +13,7 @@ import { CustomerService } from '../../services/customer/customer.service';
 export class HeaderComponent implements OnInit {
 
   public constructor(
+    private router: Router,
     private customerService: CustomerService
   ) { }
 
@@ -22,6 +24,8 @@ export class HeaderComponent implements OnInit {
     this.customerService.resetStorage().then(
 
       () => {
+
+        this.router.navigate(['/customers']);
 
         location.reload();
 

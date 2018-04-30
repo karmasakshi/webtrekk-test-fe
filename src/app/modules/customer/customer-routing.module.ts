@@ -11,7 +11,8 @@ const ROUTES: Routes = [
   {
     path: 'customers', children: [
       { path: '', component: CustomerListComponent },
-      { path: ':id', component: CustomerDetailComponent },
+      { path: 'add', component: CustomerDetailComponent, data: { componentMode: 'add' } },
+      { path: ':id', component: CustomerDetailComponent, data: { componentMode: 'edit' } },
     ]
   }
 ];

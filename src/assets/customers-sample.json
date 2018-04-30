@@ -7,7 +7,7 @@
     },
     "birthday": "1996-10-12",
     "gender": "m",
-    "lastContact": "2017-06-01T23:28:56.782Z",
+    "lastContact": "1996-10-12",
     "customerLifetimeValue": 191.12
   },
   {
@@ -18,7 +18,7 @@
     },
     "birthday": "1987-05-03",
     "gender": "w",
-    "lastContact": "2017-07-08T13:18:56.888Z",
+    "lastContact": "1987-05-03",
     "customerLifetimeValue": 50.99
   },
   {
@@ -29,7 +29,7 @@
     },
     "birthday": "1991-02-21",
     "gender": "m",
-    "lastContact": "2017-08-01T11:57:47.142Z",
+    "lastContact": "1991-02-21",
     "customerLifetimeValue": 0
   },
   {
@@ -40,7 +40,7 @@
     },
     "birthday": "1979-06-30",
     "gender": "w",
-    "lastContact": "2017-01-29T21:08:50.700Z",
+    "lastContact": "1979-06-30",
     "customerLifetimeValue": 213.12
   },
   {
@@ -51,7 +51,7 @@
     },
     "birthday": "1969-11-21",
     "gender": "m",
-    "lastContact": "2017-03-18T12:20:06.702Z",
+    "lastContact": "1969-11-21",
     "customerLifetimeValue": 1019.91
   }
 ]
