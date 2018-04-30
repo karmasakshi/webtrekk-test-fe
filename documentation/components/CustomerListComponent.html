@@ -415,164 +415,600 @@
 </nav>
                </div>
                <!-- START CONTENT -->
-               <div class="content miscellaneous-variables">
+               <div class="content component">
                    <div class="content-data">
 
 
 
 
-
-
-
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li>Miscellaneous</li>
-  <li>Variables</li>
+  <li>Components</li>
+  <li>CustomerListComponent</li>
 </ol>
 
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+    </li>
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/modules/customer/components/customer-list/customer-list.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
 <section>
-    <h3 id="index">Index</h3>
-    <table class="table table-sm table-bordered index-table">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
         <tbody>
+
+
+
+
+
+
+
+
+
+
+
             <tr>
-                <td class="col-md-4">
-                    <ul class="index-list">
-                        <li>
-                            <a href="#DATA_URL" title="src/app/services/customer/customer.service.ts"><b>DATA_URL</b>&nbsp;&nbsp;&nbsp;(src/.../customer.service.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#environment" title="src/environments/environment.prod.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
-                        </li>
-                        <li>
-                            <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
-                        </li>
-                    </ul>
-                </td>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-customer-list</code></td>
             </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>customer-list.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./customer-list.component.html</code></td>
+            </tr>
+
+
         </tbody>
     </table>
 </section>
 
-    <h3>src/app/services/customer/customer.service.ts</h3>
     <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#customers">customers</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#deleteCustomer">deleteCustomer</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getCustomers">getCustomers</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Public</span>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="DATA_URL"></a>
+                                <span class="modifier">Public</span>
+                        <code>constructor(customerService: <a href="../injectables/CustomerService.html">CustomerService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/customer/components/customer-list/customer-list.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                    <td>customerService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/CustomerService.html" target="_self" >CustomerService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteCustomer"></a>
                         <span class="name">
                             <b>
-                            DATA_URL
+                                <span class="modifier">Public</span>
+                            deleteCustomer
                             </b>
-                            <a href="#DATA_URL"><span class="fa fa-link"></span></a>
+                            <a href="#deleteCustomer"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>DATA_URL:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-</code>
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>deleteCustomer(customerId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;assets/customers-sample.json&#x27;</code>
-                        </td>
-                    </tr>
 
 
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/modules/customer/components/customer-list/customer-list.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Deletes a customer.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>customerId</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>Customer ID.</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
-</section>
-    <h3>src/environments/environment.prod.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
+        <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="environment"></a>
+                        <a name="getCustomers"></a>
                         <span class="name">
                             <b>
-                            environment
+                                <span class="modifier">Private</span>
+                            getCustomers
                             </b>
-                            <a href="#environment"><span class="fa fa-link"></span></a>
+                            <a href="#getCustomers"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>environment:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-</code>
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>getCustomers()</code>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>{
-  production: true
-}</code>
-                        </td>
-                    </tr>
 
 
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/modules/customer/components/customer-list/customer-list.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Gets customers.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
             </tbody>
         </table>
-</section>
-    <h3>src/environments/environment.ts</h3>
-    <section>
-    <h3></h3>        <table class="table table-sm table-bordered">
+        <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="environment"></a>
+                        <a name="ngOnInit"></a>
                         <span class="name">
                             <b>
-                            environment
+                                <span class="modifier">Public</span>
+                            ngOnInit
                             </b>
-                            <a href="#environment"><span class="fa fa-link"></span></a>
+                            <a href="#ngOnInit"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>environment:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+                            <span class="modifier-icon fa fa-reset"></span>
+                        <code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/modules/customer/components/customer-list/customer-list.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="customers"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Public</span>
+                            customers
+                            </b>
+                            <a href="#customers"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon fa fa-reset"></span><code>customers:     <code>any[]</code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+                            <i>Type : </i>    <code>any[]</code>
 
                         </td>
                     </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>{
-  production: false
-}</code>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/modules/customer/components/customer-list/customer-list.component.ts:14</a></div>
+                            </td>
+                        </tr>
 
 
             </tbody>
         </table>
 </section>
+
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+/* --- Services --- */
+import { CustomerService } from &#x27;../../../../services/customer/customer.service&#x27;;
+
+@Component({
+  selector: &#x27;app-customer-list&#x27;,
+  styleUrls: [&#x27;./customer-list.component.scss&#x27;],
+  templateUrl: &#x27;./customer-list.component.html&#x27;
+})
+export class CustomerListComponent implements OnInit {
+
+  public customers: any[];
+
+  public constructor(
+    private customerService: CustomerService
+  ) {
+
+    this.customers &#x3D; [];
+
+  }
+
+  public ngOnInit(): void {
+
+    this.getCustomers();
+
+  }
+
+  /**
+   * Gets customers.
+   */
+  private getCustomers(): void {
+
+    this.customerService.getCustomers().then(
+
+      (response) &#x3D;&gt; {
+
+        this.customers &#x3D; response;
+
+      },
+
+      () &#x3D;&gt; { }
+
+    );
+
+  }
+
+  /**
+   * Deletes a customer.
+   * @param customerId Customer ID.
+   */
+  public deleteCustomer(customerId: number): void {
+
+    if (confirm(&#x27;Are you sure?&#x27;)) {
+
+      this.customerService.deleteCustomer(customerId).then(
+
+        () &#x3D;&gt; {
+
+          this.getCustomers();
+
+        },
+
+        () &#x3D;&gt; { }
+
+      );
+
+    }
+
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;columns&quot;&gt;
+
+    &lt;!-- Customer Tile Wrapper --&gt;
+    &lt;div class&#x3D;&quot;col-4 col-sm-12 col-lg-6 column&quot; *ngFor&#x3D;&quot;let customer of customers&quot;&gt;
+
+      &lt;!-- Customer Tile Wrapper / Customer Tile --&gt;
+      &lt;div class&#x3D;&quot;tile&quot; [ngClass]&#x3D;&quot;{ &#x27;app-man-tile&#x27;: customer.gender &#x3D;&#x3D;&#x3D; &#x27;m&#x27;, &#x27;app-woman-tile&#x27;: customer.gender &#x3D;&#x3D;&#x3D; &#x27;w&#x27; }&quot;&gt;
+
+        &lt;!-- Customer Tile / Avatar --&gt;
+        &lt;div class&#x3D;&quot;tile-icon&quot;&gt;
+          &lt;figure class&#x3D;&quot;avatar avatar-xl&quot;&gt;
+            &lt;img alt&#x3D;&quot;Avatar&quot; src&#x3D;&quot;https://picsum.photos/512?random&#x3D;{{ customer.name.first }}&quot;&gt;
+          &lt;/figure&gt;
+        &lt;/div&gt;
+
+        &lt;!-- Customer Tile / Content --&gt;
+        &lt;div class&#x3D;&quot;tile-content&quot;&gt;
+
+          &lt;!-- Content / Name --&gt;
+          &lt;div class&#x3D;&quot;tile-title&quot;&gt;
+            &lt;span&gt;{{ customer.name.first }}&lt;/span&gt;
+            &lt;span&gt;{{ customer.name.last }}&lt;/span&gt;
+          &lt;/div&gt;
+
+          &lt;!-- Content / Details --&gt;
+          &lt;div class&#x3D;&quot;text-gray tile-subtitle&quot;&gt;
+
+            &lt;!-- Details / ID --&gt;
+            &lt;div&gt;
+              &lt;span&gt;ID:&lt;/span&gt;
+              &lt;code&gt;{{ customer.customerID }}&lt;/code&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Details / Birthday --&gt;
+            &lt;div&gt;
+              &lt;span&gt;Birthday:&lt;/span&gt;
+              &lt;span&gt;{{ customer.birthday | date }}&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Details / Last Contact --&gt;
+            &lt;div&gt;
+              &lt;span&gt;Last Contact:&lt;/span&gt;
+              &lt;span&gt;{{ customer.lastContact | date }}&lt;/span&gt;
+            &lt;/div&gt;
+
+            &lt;!-- Details / Lifetime Value --&gt;
+            &lt;div&gt;
+              &lt;span&gt;Lifetime Value:&lt;/span&gt;
+              &lt;span&gt;{{ customer.customerLifetimeValue }}&lt;/span&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+
+        &lt;/div&gt;
+
+        &lt;!-- Customer Tile / Actions --&gt;
+        &lt;div class&#x3D;&quot;tile-action&quot;&gt;
+
+          &lt;!-- Actions / Edit --&gt;
+          &lt;button class&#x3D;&quot;btn btn-sm btn-primary&quot; [routerLink]&#x3D;&quot;[customer.customerID]&quot; type&#x3D;&quot;button&quot;&gt;
+            &lt;i class&#x3D;&quot;icon icon-edit&quot;&gt;&lt;/i&gt;
+            &lt;span&gt;Edit&lt;/span&gt;
+          &lt;/button&gt;
+
+          &lt;!-- Actions / Delete --&gt;
+          &lt;button class&#x3D;&quot;btn btn-link btn-sm tooltip tooltip-bottom&quot; (click)&#x3D;&quot;deleteCustomer(customer.customerID)&quot; data-tooltip&#x3D;&quot;Delete&quot; type&#x3D;&quot;button&quot;&gt;
+            &lt;i class&#x3D;&quot;icon icon-delete&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container">  <div class="columns">    <!-- Customer Tile Wrapper -->    <div class="col-4 col-sm-12 col-lg-6 column" *ngFor="let customer of customers">      <!-- Customer Tile Wrapper / Customer Tile -->      <div class="tile" [ngClass]="{ \'app-man-tile\': customer.gender === \'m\', \'app-woman-tile\': customer.gender === \'w\' }">        <!-- Customer Tile / Avatar -->        <div class="tile-icon">          <figure class="avatar avatar-xl">            <img alt="Avatar" src="https://picsum.photos/512?random={{ customer.name.first }}">          </figure>        </div>        <!-- Customer Tile / Content -->        <div class="tile-content">          <!-- Content / Name -->          <div class="tile-title">            <span>{{ customer.name.first }}</span>            <span>{{ customer.name.last }}</span>          </div>          <!-- Content / Details -->          <div class="text-gray tile-subtitle">            <!-- Details / ID -->            <div>              <span>ID:</span>              <code>{{ customer.customerID }}</code>            </div>            <!-- Details / Birthday -->            <div>              <span>Birthday:</span>              <span>{{ customer.birthday | date }}</span>            </div>            <!-- Details / Last Contact -->            <div>              <span>Last Contact:</span>              <span>{{ customer.lastContact | date }}</span>            </div>            <!-- Details / Lifetime Value -->            <div>              <span>Lifetime Value:</span>              <span>{{ customer.customerLifetimeValue }}</span>            </div>          </div>        </div>        <!-- Customer Tile / Actions -->        <div class="tile-action">          <!-- Actions / Edit -->          <button class="btn btn-sm btn-primary" [routerLink]="[customer.customerID]" type="button">            <i class="icon icon-edit"></i>            <span>Edit</span>          </button>          <!-- Actions / Delete -->          <button class="btn btn-link btn-sm tooltip tooltip-bottom" (click)="deleteCustomer(customer.customerID)" data-tooltip="Delete" type="button">            <i class="icon icon-delete"></i>          </button>        </div>      </div>    </div>  </div></div></div>'
+    var COMPONENTS = [{'name': 'CustomerDetailComponent', 'selector': 'app-customer-detail'},{'name': 'CustomerListComponent', 'selector': 'app-customer-list'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'MainComponent', 'selector': 'app-main'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CustomerListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
 
 
                    </div><div class="search-results">
@@ -600,7 +1036,7 @@
 
         <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CustomerListComponent.html';
         </script>
 
        <script src="../js/search/search.js"></script>
