@@ -1,6 +1,9 @@
 /* --- Angular Imports --- */
 import { Component, OnInit } from '@angular/core';
 
+/* --- Services --- */
+import { CustomerService } from '../../services/customer/customer.service';
+
 @Component({
   selector: 'app-header',
   styleUrls: ['./header.component.scss'],
@@ -8,8 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public constructor() { }
+  public constructor(
+    private customerService: CustomerService
+  ) { }
 
   public ngOnInit(): void { }
+
+  public resetStorage(): void {
+
+    this.customerService.resetStorage().then(
+
+      () => {
+
+        location.reload();
+
+      },
+
+      () => { }
+
+    );
+
+  }
 
 }

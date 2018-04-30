@@ -1,14 +1,29 @@
 <header class="navbar app-header">
+
+  <!-- Left Section -->
   <section class="navbar-section">
     <button type="button" [routerLink]="['/']" class="btn btn-primary btn-sm">
       <i class="icon icon-flag"></i>
       <span>Webtrekk Test</span>
     </button>
   </section>
+
+  <!-- Right Section -->
   <section class="navbar-section">
+
+    <!-- Right Section / Reset Storage -->
+    <button type="button" (click)="resetStorage()" class="btn btn-error btn-sm tooltip tooltip-bottom" data-tooltip="Reset Storage">
+      <i class="icon icon-refresh"></i>
+    </button>
+
+    <span>&nbsp;</span>
+
+    <!-- Right Section / Add Customer -->
     <button type="button" [routerLink]="['/customer', 'add']" class="btn btn-success btn-sm">
       <i class="icon icon-plus"></i>
       <span>Add Customer</span>
     </button>
+
   </section>
+
 </header>

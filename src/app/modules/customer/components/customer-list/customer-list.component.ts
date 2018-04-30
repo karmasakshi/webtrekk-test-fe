@@ -32,15 +32,13 @@ export class CustomerListComponent implements OnInit {
    */
   private getCustomers(): void {
 
-    this.customerService.getCustomers().subscribe(
+    this.customerService.getCustomers().then(
 
       (response) => {
 
         this.customers = response;
 
       },
-
-      () => { },
 
       () => { }
 
@@ -52,6 +50,24 @@ export class CustomerListComponent implements OnInit {
    * Deletes a customer.
    * @param customerId Customer ID.
    */
-  public deleteCustomer(customerId: number): void { }
+  public deleteCustomer(customerId: number): void {
+
+    if (confirm('Are you sure?')) {
+
+      this.customerService.deleteCustomer(customerId).then(
+
+        () => {
+
+          this.getCustomers();
+
+        },
+
+        () => { }
+
+      );
+
+    }
+
+  }
 
 }

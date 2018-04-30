@@ -1,54 +1,55 @@
 <div class="container">
   <div class="columns">
 
-    <!-- Customer Card Wrapper -->
-    <div class="column col-sm-12 col-md-6 col-xl-4" *ngFor="let customer of customers">
+    <!-- Customer Tile Wrapper -->
+    <div class="column col-sm-12 col-lg-6 col-4" *ngFor="let customer of customers">
 
-      <!-- Customer Card Wrapper / Customer Card -->
-      <div class="card app-card" [ngClass]="{ 'app-man-card': customer.gender === 'm', 'app-woman-card': customer.gender === 'w' }">
+      <!-- Customer Tile Wrapper / Customer Tile -->
+      <div class="tile" [ngClass]="{ 'app-man-tile': customer.gender === 'm', 'app-woman-tile': customer.gender === 'w' }">
 
-        <!-- Customer Card / Avatar -->
-        <div class="card-image">
-          <img src="https://picsum.photos/512?random={{ customer.name.first }}" class="img-responsive app-avatar">
+        <!-- Customer Tile / Avatar -->
+        <div class="tile-icon">
+          <figure class="avatar avatar-xl">
+            <img src="https://picsum.photos/512?random={{ customer.name.first }}" alt="Avatar">
+          </figure>
         </div>
 
-        <!-- Customer Card / Name -->
-        <div class="card-header">
-          <div class="card-title h5">
+        <!-- Customer Tile / Content -->
+        <div class="tile-content">
+
+          <!-- Content / Name -->
+          <div class="tile-title">
             <span>{{ customer.name.first }}</span>
-            <span> </span>
             <span>{{ customer.name.last }}</span>
           </div>
+
+          <!-- Content / Details -->
+          <div class="tile-subtitle text-gray">
+
+            <!-- Details / ID -->
+            <div>
+              <span>ID:</span>
+              <code>{{ customer.customerID }}</code>
+            </div>
+
+            <!-- Details / Birthday -->
+            <div>
+              <span>Birthday:</span>
+              <span>{{ customer.birthday | date }}</span>
+            </div>
+
+            <!-- Details / Lifetime Value -->
+            <div>
+              <span>Lifetime Value:</span>
+              <span>{{ customer.customerLifetimeValue }}</span>
+            </div>
+
+          </div>
+
         </div>
 
-        <!-- Customer Card / Details -->
-        <div class="card-body">
-
-          <!-- Details / ID -->
-          <div>
-            <span>ID:</span>
-            <span> </span>
-            <code>{{ customer.customerID }}</code>
-          </div>
-
-          <!-- Details / Birthday -->
-          <div>
-            <span>Birthday:</span>
-            <span> </span>
-            <span>{{ customer.birthday | date }}</span>
-          </div>
-
-          <!-- Details / Lifetime Value -->
-          <div>
-            <span>Lifetime Value:</span>
-            <span> </span>
-            <span>{{ customer.customerLifetimeValue }}</span>
-          </div>
-
-        </div>
-
-        <!-- Customer Card / Actions -->
-        <div class="card-footer">
+        <!-- Customer Tile / Actions -->
+        <div class="tile-action">
 
           <!-- Actions / Edit -->
           <button [routerLink]="[customer.customerID]" type="button" class="btn btn-sm btn-primary">
